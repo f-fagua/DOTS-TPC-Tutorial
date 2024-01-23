@@ -84,6 +84,9 @@ public readonly partial struct ThirdPersonCharacterAspect : IAspect, IKinematicC
             {
                 CharacterControlUtilities.StandardJump(ref characterBody, characterBody.GroundingUp * characterComponent.JumpSpeed, true, characterBody.GroundingUp);
             }
+            
+            // Reset air jumps when grounded
+            characterComponent.CurrentAirJumps = 0;
         }
         else
         {
@@ -101,6 +104,13 @@ public readonly partial struct ThirdPersonCharacterAspect : IAspect, IKinematicC
                 }
             }
             
+            // Air Jumps
+            if (characterControl.Jump && characterComponent.CurrentAirJumps < characterComponent.MaxAirJumps)
+            {
+                CharacterControlUtilities.StandardJump(ref characterBody, characterBody.GroundingUp * characterComponent.JumpSpeed, true, characterBody.GroundingUp);
+                characterComponent.CurrentAirJumps++;
+            }
+
             // Gravity
             CharacterControlUtilities.AccelerateVelocity(ref characterBody.RelativeVelocity, characterComponent.Gravity, deltaTime);
 

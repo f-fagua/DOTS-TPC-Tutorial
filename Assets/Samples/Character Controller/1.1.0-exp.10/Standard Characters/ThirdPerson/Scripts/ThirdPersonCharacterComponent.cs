@@ -18,6 +18,10 @@ public struct ThirdPersonCharacterComponent : IComponentData
     public float3 Gravity;
     public bool PreventAirAccelerationAgainstUngroundedHits;
     public BasicStepAndSlopeHandlingParameters StepAndSlopeHandling;
+    public int MaxAirJumps;
+
+    [UnityEngine.HideInInspector] 
+    public int CurrentAirJumps;
 }
 
 [Serializable]
