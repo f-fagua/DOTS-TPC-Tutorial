@@ -13,6 +13,7 @@ public class ThirdPersonCharacterAuthoring : MonoBehaviour
     
     public float RotationSharpness = 25f;
     public float GroundMaxSpeed = 10f;
+    public float SprintSpeedMultipier = 2f;
     public float GroundedMovementSharpness = 15f;
     public float AirAcceleration = 50f;
     public float AirMaxSpeed = 10f;
@@ -35,6 +36,7 @@ public class ThirdPersonCharacterAuthoring : MonoBehaviour
             {
                 RotationSharpness = authoring.RotationSharpness,
                 GroundMaxSpeed = authoring.GroundMaxSpeed,
+                SprintSpeedMultiplier = authoring.SprintSpeedMultipier,
                 GroundedMovementSharpness = authoring.GroundedMovementSharpness,
                 AirAcceleration = authoring.AirAcceleration,
                 AirMaxSpeed = authoring.AirMaxSpeed,

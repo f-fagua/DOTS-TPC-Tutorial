@@ -4,6 +4,7 @@ using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
 using Unity.CharacterController;
+using UnityEngine.Serialization;
 
 [Serializable]
 public struct ThirdPersonCharacterComponent : IComponentData
@@ -19,9 +20,9 @@ public struct ThirdPersonCharacterComponent : IComponentData
     public bool PreventAirAccelerationAgainstUngroundedHits;
     public BasicStepAndSlopeHandlingParameters StepAndSlopeHandling;
     public int MaxAirJumps;
-
     [UnityEngine.HideInInspector] 
     public int CurrentAirJumps;
+    [FormerlySerializedAs("SprintSpeedMultiplayer")] public float SprintSpeedMultiplier;
 }
 
 [Serializable]
@@ -29,4 +30,5 @@ public struct ThirdPersonCharacterControl : IComponentData
 {
     public float3 MoveVector;
     public bool Jump;
+    public bool Sprint;
 }

@@ -10,6 +10,7 @@ using Unity.CharacterController;
 [UpdateInGroup(typeof(InitializationSystemGroup))]
 public partial class ThirdPersonPlayerInputsSystem : SystemBase
 {
+    
     protected override void OnCreate()
     {
         RequireForUpdate<FixedTickSystem.Singleton>();
@@ -35,6 +36,8 @@ public partial class ThirdPersonPlayerInputsSystem : SystemBase
             {
                 playerInputs.ValueRW.JumpPressed.Set(tick);
             }
+            
+            playerInputs.ValueRW.SprintHeld = Input.GetKey(KeyCode.LeftShift);
         }
     }
 }
@@ -119,7 +122,10 @@ public partial struct ThirdPersonPlayerFixedStepControlSystem : ISystem
 
                 // Jump
                 characterControl.Jump = playerInputs.JumpPressed.IsSet(tick);
-
+                
+                // Sprint
+                characterControl.Sprint = playerInputs.SprintHeld;
+                
                 SystemAPI.SetComponent(player.ControlledCharacter, characterControl);
             }
         }
