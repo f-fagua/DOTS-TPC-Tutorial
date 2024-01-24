@@ -196,6 +196,46 @@ PrefabInstance:
       propertyPath: ControlledCharacter
       value: 
       objectReference: {fileID: 2088178676}
+    - target: {fileID: 5910332505473654983, guid: 65701a63aea96444fa3a4b2ed4edbb25,
+        type: 3}
+      propertyPath: mesh.Id.GenerationType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910332505473654983, guid: 65701a63aea96444fa3a4b2ed4edbb25,
+        type: 3}
+      propertyPath: material.Id.GenerationType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910332505473654983, guid: 65701a63aea96444fa3a4b2ed4edbb25,
+        type: 3}
+      propertyPath: mesh.Id.GlobalId.AssetGUID
+      value: 8ca937ac2f164949b8a5984110ae1fe8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910332505473654983, guid: 65701a63aea96444fa3a4b2ed4edbb25,
+        type: 3}
+      propertyPath: material.Id.GlobalId.AssetGUID
+      value: dd14bdc2bde4664e8935301e82a71b10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910332505473654983, guid: 65701a63aea96444fa3a4b2ed4edbb25,
+        type: 3}
+      propertyPath: mesh.Id.GlobalId.IdentifierType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910332505473654983, guid: 65701a63aea96444fa3a4b2ed4edbb25,
+        type: 3}
+      propertyPath: material.Id.GlobalId.IdentifierType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910332505473654983, guid: 65701a63aea96444fa3a4b2ed4edbb25,
+        type: 3}
+      propertyPath: mesh.Id.GlobalId.SceneObjectIdentifier0
+      value: 4300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910332505473654983, guid: 65701a63aea96444fa3a4b2ed4edbb25,
+        type: 3}
+      propertyPath: material.Id.GlobalId.SceneObjectIdentifier0
+      value: 2100000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
