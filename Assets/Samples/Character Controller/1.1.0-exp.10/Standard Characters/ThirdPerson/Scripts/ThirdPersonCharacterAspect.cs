@@ -159,7 +159,17 @@ public readonly partial struct ThirdPersonCharacterAspect : IAspect, IKinematicC
         ref KinematicCharacterUpdateContext baseContext,
         in BasicHit hit)
     {
-        return PhysicsUtilities.IsCollidable(hit.Material);
+        ThirdPersonCharacterComponent characterComponent = CharacterComponent.ValueRO;
+        
+        // First, see if we'd have to ignore based on the default implementation
+        if (!PhysicsUtilities.IsCollidable(hit.Material))
+            return false;
+        
+        // if not, check for the ignored tag
+        if (PhysicsUtilities.HasPhysicsTag(in baseContext.PhysicsWorld, hit.RigidBodyIndex, characterComponent.IgnoredPhysicsTags))
+            return false;
+
+        return true;
     }
 
     public bool IsGroundedOnHit(

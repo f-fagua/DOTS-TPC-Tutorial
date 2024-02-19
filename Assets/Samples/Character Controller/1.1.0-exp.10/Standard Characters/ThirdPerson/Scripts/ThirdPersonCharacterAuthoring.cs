@@ -23,7 +23,8 @@ public class ThirdPersonCharacterAuthoring : MonoBehaviour
     public float3 Gravity = math.up() * -30f;
     public bool PreventAirAccelerationAgainstUngroundedHits = true;
     public BasicStepAndSlopeHandlingParameters StepAndSlopeHandling = BasicStepAndSlopeHandlingParameters.GetDefault();
-
+    public CustomPhysicsBodyTags IgnoredPhysicsTags;
+    
     public class Baker : Baker<ThirdPersonCharacterAuthoring>
     {
         public override void Bake(ThirdPersonCharacterAuthoring authoring)
@@ -46,6 +47,7 @@ public class ThirdPersonCharacterAuthoring : MonoBehaviour
                 Gravity = authoring.Gravity,
                 PreventAirAccelerationAgainstUngroundedHits = authoring.PreventAirAccelerationAgainstUngroundedHits,
                 StepAndSlopeHandling = authoring.StepAndSlopeHandling,
+                IgnoredPhysicsTags = authoring.IgnoredPhysicsTags
             });
             AddComponent(entity, new ThirdPersonCharacterControl());
         }

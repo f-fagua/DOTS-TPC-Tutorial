@@ -4,6 +4,7 @@ using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
 using Unity.CharacterController;
+using Unity.Physics.Authoring;
 using UnityEngine.Serialization;
 
 [Serializable]
@@ -23,6 +24,8 @@ public struct ThirdPersonCharacterComponent : IComponentData
     [UnityEngine.HideInInspector] 
     public int CurrentAirJumps;
     [FormerlySerializedAs("SprintSpeedMultiplayer")] public float SprintSpeedMultiplier;
+
+    public CustomPhysicsBodyTags IgnoredPhysicsTags;
 }
 
 [Serializable]
